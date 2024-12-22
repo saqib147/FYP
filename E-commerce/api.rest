@@ -1,0 +1,51 @@
+GET https://final-year-project-ecommerce-exri.onrender.com/
+
+//                          create
+###
+GET https://final-year-project-ecommerce-exri.onrender.com/signup?name=majid&email=majid@email.com&password=majid
+
+###
+GET https://final-year-project-ecommerce-exri.onrender.com/signup?name=absar&email=absar@email.com&password=absar
+
+###
+GET https://final-year-project-ecommerce-exri.onrender.com/signup?name=bilal&email=bilal@email.com&password=bilal
+
+//                          duplicate user
+###
+GET https://final-year-project-ecommerce-exri.onrender.com/signup?name=majid&email=majid@email.com&password=majid
+
+
+//                           read all
+###
+GET https://final-year-project-ecommerce-exri.onrender.com/all
+
+//                          read
+###
+GET https://final-year-project-ecommerce-exri.onrender.com/login?email=majid@email.com
+
+
+//                          update
+###
+GET https://final-year-project-ecommerce-exri.onrender.com/update?name=majid&email=majid@email.com
+auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NjAzZDVkNGUyYmJiOTg0MDhlYWI4YiIsImVtYWlsIjoibWFqaWRAZW1haWwuY29tIiwiaWF0IjoxNzM0MzYwNDMxfQ.GBJ7O-bU9nn5sQYgrgLHLihMg6LQyGfQA9lDROLT6mI
+###
+
+//                          delete
+###
+GET https://final-year-project-ecommerce-exri.onrender.com/delete?email=majid@email.com
+auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NjAzZDVkNGUyYmJiOTg0MDhlYWI4YiIsImVtYWlsIjoibWFqaWRAZW1haWwuY29tIiwiaWF0IjoxNzM0MzYwNDMxfQ.GBJ7O-bU9nn5sQYgrgLHLihMg6LQyGfQA9lDROLT6mI
+###
+GET https://final-year-project-ecommerce-exri.onrender.com/all
+
+###
+GET https://final-year-project-ecommerce-exri.onrender.com/login?email=absar@email.com
+
+###
+GET https://final-year-project-ecommerce-exri.onrender.com/all
+
+###
+GET https://final-year-project-ecommerce-exri.onrender.com/delete?email=bilal@email.com
+
+###
+GET https://final-year-project-ecommerce-exri.onrender.com/all
+auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NjAzZDVkNGUyYmJiOTg0MDhlYWI4YiIsImVtYWlsIjoibWFqaWRAZW1haWwuY29tIiwiaWF0IjoxNzM0MzYwNDMxfQ.GBJ7O-bU9nn5sQYgrgLHLihMg6LQyGfQA9lDROLT6mI
