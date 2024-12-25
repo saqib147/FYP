@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cors());
 
 const mongoURI =
-  "mongodb://saqib-user-1:saqib-user-1@cluster1-shard-00-00.id7mf.mongodb.net:27017,cluster1-shard-00-01.id7mf.mongodb.net:27017,cluster1-shard-00-02.id7mf.mongodb.net:27017/?ssl=true&replicaSet=atlas-9ndggb-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster1";
+  "mongodb+srv://saqibdev:saqib123@product.p90ou.mongodb.net/Ecommerce?retryWrites=true&w=majority&appName=product";
 mongoose
   .connect(mongoURI, { useUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB connected"))

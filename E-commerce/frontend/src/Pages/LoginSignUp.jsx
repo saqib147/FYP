@@ -41,34 +41,32 @@ const LoginSignUp = () => {
   const signup = async () => {
     console.log("signup Function Executed", formData);
     try {
-      const response = await fetch(
-        `http://localhost:5000/signup?name=${encodeURIComponent(
-          formData.name
-        )}&email=${encodeURIComponent(
-          formData.email
-        )}&password=${encodeURIComponent(formData.password)}`,
-        {
-          method: "GET",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await fetch(`http://localhost:5000/signup?name=${encodeURIComponent(formData.name)}&email=${encodeURIComponent(formData.email)}&password=${encodeURIComponent(formData.password)}`, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+      
+      });
 
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+  
       const responseData = await response.json();
-
+  
       if (responseData.success) {
-        localStorage.setItem("auth-token", responseData.token);
-        window.location.replace("/"); // Or use React Router if applicable
+        localStorage.setItem('auth-token', responseData.token);
+        window.location.replace("/");  // Or use React Router if applicable
       } else {
         alert(responseData.errors);
       }
     } catch (error) {
-      console.error("Error signing up:", error);
+      console.error('Error signing up:', error);
     }
   };
-
+  
   return (
     <div className="loginsignup">
       <div className="loginsignup-container">

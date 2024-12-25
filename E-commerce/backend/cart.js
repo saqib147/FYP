@@ -10,7 +10,7 @@ app.use(cors());
 
 // MongoDB connection for user data
 mongoose.connect(
-  "mongodb+srv://saqibarshad429:HNjg8NTJHuhmRzEM@user.k0y9m.mongodb.net/?retryWrites=true&w=majority&appName=user"
+  "mongodb+srv://fazeeldev:fazeel123@users.doa8p.mongodb.net/Ecommerce?retryWrites=true&w=majority&appName=users"
 );
 
 const Users = mongoose.model("Users", {

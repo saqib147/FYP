@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 const uri =
-  "mongodb+srv://saqibarshad429:HNjg8NTJHuhmRzEM@user.k0y9m.mongodb.net/?retryWrites=true&w=majority&appName=user";
+  "mongodb+srv://fazeeldev:fazeel123@users.doa8p.mongodb.net/Ecommerce?retryWrites=true&w=majority&appName=users";
 
 mongoose
   .connect(uri)
@@ -37,48 +37,41 @@ app.get("/", (req, res) => {
 });
 
 // Create new user (CREATE)
-app.get("/signup", async (req, res) => {
-  const { name, email, password } = req.query; // Receiving data via query parameters
+app.get('/signup', async (req, res) => {
+  const { name, email, password } = req.query;  // Receiving data via query parameters
 
   // Validate input
   if (!name || !email || !password) {
-    return res
-      .status(400)
-      .json({ success: false, message: "All fields are required" });
+      return res.status(400).json({ success: false, message: "All fields are required" });
   }
 
   try {
-    // Check if the user already exists
-    let existingUser = await Users.findOne({ email });
-    if (existingUser) {
-      return res
-        .status(400)
-        .json({ success: false, message: "User already exists" });
-    }
+      // Check if the user already exists
+      let existingUser = await Users.findOne({ email });
+      if (existingUser) {
+          return res.status(400).json({ success: false, message: "User already exists" });
+      }
 
-    // Initialize cart
-    let cart = {};
-    for (let i = 0; i < 300; i++) cart[i] = 0;
+      // Initialize cart
+      let cart = {};
+      for (let i = 0; i < 300; i++) cart[i] = 0;
 
-    // Create new user and save
-    const user = new Users({
-      name,
-      email,
-      password,
-      cartData: cart,
-    });
+      // Create new user and save
+      const user = new Users({
+          name,
+          email,
+          password,
+          cartData: cart,
+      });
 
-    await user.save();
+      await user.save();
+      
 
-    const token = jwt.sign(
-      { user: { id: user.id, email: user.email, name: user.name } },
-      "secret_ecom"
-    );
-    res.json({ success: true, token });
+      const token = jwt.sign({ user: { id: user.id, email: user.email, name: user.name }}, 'secret_ecom');
+      res.json({ success: true, token });
+      
   } catch (error) {
-    res
-      .status(500)
-      .json({ success: false, message: "Error creating user", error });
+      res.status(500).json({ success: false, message: "Error creating user", error });
   }
 });
 
