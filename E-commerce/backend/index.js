@@ -2,7 +2,6 @@ const port = 4000;
 const express = require("express");
 const { JsonWebTokenError } = require("jsonwebtoken");
 const app = express();
-require("dotenv").config();
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const multer = require("multer");
