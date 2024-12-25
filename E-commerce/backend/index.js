@@ -11,7 +11,6 @@ const { CloudinaryStorage } = require("multer-storage-cloudinary"); // Correct w
 const path = require("path");
 const cors = require("cors");
 const { type } = require("os");
-require('dotenv').config();
 
 app.use(express.json());
 app.use(cors());
