@@ -31,9 +31,9 @@ app.get("/", (req, res) => {
 
 // Cloudinary configuration
 cloudinary.config({
-  cloud_name: process.env.CLOUD_NAME,
-  api_key: process.env.API_KEY,
-  api_secret: process.env.API_SECRET,
+  CLOUD_NAME:dq4oxcc5n,
+  API_KEY:813742872391857.,
+  API_SECRET:I6RwON_Tvc6dT0HRBVTFta_DD_o
 });
 
 // Set up Cloudinary storage for multer
