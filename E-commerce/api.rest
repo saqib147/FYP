@@ -2,7 +2,7 @@ GET https://final-year-project-ecommerce-exri.onrender.com/
 
 //                          create
 ###
-GET https://final-year-project-ecommerce-exri.onrender.com/signup?name=majid&email=majid@email.com&password=majid
+GET https://https://fyp-login.onrender.com/signup?name=majid&email=majid@email.com&password=majid
 
 ###
 GET https://final-year-project-ecommerce-exri.onrender.com/signup?name=absar&email=absar@email.com&password=absar

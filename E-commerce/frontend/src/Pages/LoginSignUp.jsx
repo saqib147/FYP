@@ -15,7 +15,7 @@ const LoginSignUp = () => {
     console.log("Login Function Executed", formData);
     try {
       const response = await fetch(
-        "https://fyp-3-s8fw.onrender.com/login?email=" + formData.email,
+        "https://fyp-login.onrender.com/login?email=" + formData.email,
         {
           method: "GET",
           headers: {
@@ -41,32 +41,38 @@ const LoginSignUp = () => {
   const signup = async () => {
     console.log("signup Function Executed", formData);
     try {
-      const response = await fetch(`https://fyp-3-s8fw.onrender.com/signup?name=${encodeURIComponent(formData.name)}&email=${encodeURIComponent(formData.email)}&password=${encodeURIComponent(formData.password)}`, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-      
-      });
+      const response = await fetch(
+        `https://fyp-login.onrender.com/signup?name=${encodeURIComponent(
+          formData.name
+        )}&email=${encodeURIComponent(
+          formData.email
+        )}&password=${encodeURIComponent(formData.password)}`,
+        {
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-  
+      }
+
       const responseData = await response.json();
-  
+
       if (responseData.success) {
-        localStorage.setItem('auth-token', responseData.token);
-        window.location.replace("/");  // Or use React Router if applicable
+        localStorage.setItem("auth-token", responseData.token);
+        window.location.replace("/"); // Or use React Router if applicable
       } else {
         alert(responseData.errors);
       }
     } catch (error) {
-      console.error('Error signing up:', error);
+      console.error("Error signing up:", error);
     }
   };
-  
+
   return (
     <div className="loginsignup">
       <div className="loginsignup-container">

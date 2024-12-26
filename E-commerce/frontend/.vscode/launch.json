@@ -8,7 +8,7 @@
       "type": "chrome",
       "request": "launch",
       "name": "Launch Chrome against localhost",
-      "url": "https://fyp-2-7tib.onrender.com",
+      "url": "https://fyp-cart.onrender.com",
       "webRoot": "${workspaceFolder}"
     }
   ]

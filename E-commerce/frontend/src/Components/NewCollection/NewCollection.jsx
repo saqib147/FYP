@@ -6,7 +6,7 @@ const NewCollection = () => {
   const [new_collections, setNew_collection] = useState([]);
 
   useEffect(() => {
-    fetch("https://fyp-1-ynb7.onrender.com/newcollections")
+    fetch("https://fyp-index.onrender.com/newcollections")
       .then((response) => response.json())
       .then((data) => setNew_collection(data));
   }, []);

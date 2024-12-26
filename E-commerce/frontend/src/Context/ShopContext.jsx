@@ -17,7 +17,7 @@ const ShopContextProvider = (props) => {
 
   useEffect(() => {
     if (!all_product) {
-      fetch("https://fyp-1-ynb7.onrender.com/allproducts")
+      fetch("https://fyp-index.onrender.com/allproducts")
         .then((response) => response.json())
         .then((data) => setAll_Product(data));
     } else {
@@ -29,7 +29,7 @@ const ShopContextProvider = (props) => {
 
   const fetchCartData = () => {
     if (localStorage.getItem("auth-token")) {
-      fetch("https://fyp-2-7tib.onrender.com/getcart", {
+      fetch("https://fyp-cart.onrender.com/getcart", {
         method: "POST",
         headers: {
           Accept: "application/form-data",
@@ -63,7 +63,7 @@ const ShopContextProvider = (props) => {
   const addToCart = (itemId) => {
     // Sync with server
     if (localStorage.getItem("auth-token")) {
-      fetch("https://fyp-2-7tib.onrender.com/addtocart", {
+      fetch("https://fyp-cart.onrender.com/addtocart", {
         method: "POST",
         headers: {
           Accept: "application/form-data",
@@ -86,7 +86,7 @@ const ShopContextProvider = (props) => {
 
   const RemoveFromCart = (itemId, refresh = true) => {
     if (localStorage.getItem("auth-token")) {
-      fetch("https://fyp-2-7tib.onrender.com/removefromcart", {
+      fetch("https://fyp-cart.onrender.com/removefromcart", {
         method: "POST",
         headers: {
           Accept: "application/form-data",
