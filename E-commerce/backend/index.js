@@ -29,7 +29,6 @@ app.get("/", (req, res) => {
   });
 });
 
-// Cloudinary configuration
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.API_KEY,
@@ -40,18 +39,16 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "newFolder", // Optional: Folder in Cloudinary
-    allowed_formats: ["jpg", "png", "jpeg"], // Allowed image formats
+    folder: 'newFolder', // Optional: Folder in Cloudinary
+    allowed_formats: ['jpg', 'png', 'jpeg'], // Allowed image formats
   },
 });
 
 const upload = multer({ storage: storage });
 // Cloudinary image upload endpoint
-app.post("/upload", upload.single("product"), (req, res) => {
+app.post('/upload', upload.single('product'), (req, res) => {
   if (!req.file) {
-    return res
-      .status(400)
-      .json({ success: false, message: "No file uploaded" });
+    return res.status(400).json({ success: false, message: "No file uploaded" });
   }
   res.json({
     success: true,
