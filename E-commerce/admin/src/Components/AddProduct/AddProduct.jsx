@@ -26,7 +26,7 @@ const AddProduct = () => {
     let formData = new FormData();
     formData.append("product", image);
 
-    await fetch("https://fyp-index.onrender.com/upload", {
+    await fetch("http://localhost:4000/upload", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -48,7 +48,7 @@ const AddProduct = () => {
 
       console.log("Final Product Data:", product);
 
-      await fetch("https://fyp-index.onrender.com/addproduct", {
+      await fetch("http://localhost:4000/addproduct", {
         method: "POST",
         headers: {
           Accept: "application/json",
