@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@cloudinary/react": "^1.13.1",
+    "@cloudinary/url-gen": "^1.21.0",
     "cloudify": "^1.4.0",
     "cloudinary": "^1.41.3",
     "cors": "^2.8.5",
