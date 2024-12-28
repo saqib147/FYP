@@ -8,10 +8,13 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// MongoDB connection for user data
-mongoose.connect(
-  "mongodb+srv://fazeeldev:fazeel123@users.doa8p.mongodb.net/Ecommerce?retryWrites=true&w=majority&appName=users"
-);
+const uri =
+  "mongodb+srv://fazeeldev:fazeel123@users.doa8p.mongodb.net/Ecommerce?retryWrites=true&w=majority&appName=users";
+
+mongoose
+  .connect(uri)
+  .then(() => console.log("Connected to MongoDB successfully"))
+  .catch((err) => console.error("Failed to connect to MongoDB:", err));
 
 const Users = mongoose.model("Users", {
   name: { type: String },

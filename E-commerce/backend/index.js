@@ -15,12 +15,13 @@ const { type } = require("os");
 app.use(express.json());
 app.use(cors());
 
-const mongoURI =
-  "mongodb+srv://saqibdev:saqib123@product.p90ou.mongodb.net/Ecommerce?retryWrites=true&w=majority&appName=product";
+const  mongoURI =
+"mongodb+srv://saqibdev:saqib123@product.p90ou.mongodb.net/Ecommerce?retryWrites=true&w=majority&appName=product";
 mongoose
-  .connect(mongoURI, { useUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.error("MongoDB connection error:", err));
+.connect(mongoURI, { useUrlParser: true, useUnifiedTopology: true })
+.then(() => console.log("MongoDB connected"))
+.catch((err) => console.error("MongoDB connection error:", err));
+
 
 app.get("/", (req, res) => {
   res.json({
@@ -29,6 +30,7 @@ app.get("/", (req, res) => {
   });
 });
 
+// Cloudinary configuration
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.API_KEY,
@@ -39,16 +41,18 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: 'newFolder', // Optional: Folder in Cloudinary
-    allowed_formats: ['jpg', 'png', 'jpeg'], // Allowed image formats
+    folder: "newFolder", // Optional: Folder in Cloudinary
+    allowed_formats: ["jpg", "png", "jpeg"], // Allowed image formats
   },
 });
 
 const upload = multer({ storage: storage });
 // Cloudinary image upload endpoint
-app.post('/upload', upload.single('product'), (req, res) => {
+app.post("/upload", upload.single("product"), (req, res) => {
   if (!req.file) {
-    return res.status(400).json({ success: false, message: "No file uploaded" });
+    return res
+      .status(400)
+      .json({ success: false, message: "No file uploaded" });
   }
   res.json({
     success: true,
