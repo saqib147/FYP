@@ -2,7 +2,7 @@ const port = 4000;
 const express = require("express");
 const { JsonWebTokenError } = require("jsonwebtoken");
 const app = express();
-require('dotenv').config();
+//require('dotenv').config();
 const mongoose = require('mongoose');
 const jwt = require("jsonwebtoken");
 const multer = require('multer');
@@ -32,9 +32,9 @@ app.get("/", (req, res) => {
 
 // Cloudinary configuration
 cloudinary.config({
-  cloud_name: process.env.CLOUD_NAME,
-  api_key: process.env.API_KEY,
-  api_secret: process.env.API_SECRET,
+  cloud_name: 'dq4oxcc5n',
+  api_key: '813742872391857',
+  api_secret: 'I6RwON_Tvc6dT0HRBVTFta_DD_o',
 });
 
 // Set up Cloudinary storage for multer
