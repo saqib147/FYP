@@ -32,9 +32,9 @@ app.get("/", (req, res) => {
 
 // Cloudinary configuration
 cloudinary.config({
-  cloud_name: 'dq4oxcc5n',
-  api_key: '813742872391857',
-  api_secret: 'I6RwON_Tvc6dT0HRBVTFta_DD_o',
+  cloud_name: "dq4oxcc5n",
+  api_key: "813742872391857",
+  api_secret: "I6RwON_Tvc6dT0HRBVTFta_DD_o",
 });
 
 // Set up Cloudinary storage for multer
