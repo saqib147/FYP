@@ -8,7 +8,7 @@ const ListProduct = () => {
   const fetchInfo = async () => {
     try {
       const response = await fetch(
-        "http://localhost:4000/allproducts"
+        "https://fyp-index.onrender.com/allproducts"
       );
       const data = await response.json();
       console.log("Fetched Data:", data); // Log data to check for duplicates or unexpected issues
@@ -23,7 +23,7 @@ const ListProduct = () => {
   }, []); // Empty dependency array means it only runs once on mount
 
   const remove_product = async (id) => {
-    await fetch("http://localhost:4000/removeproduct", {
+    await fetch("https://fyp-index.onrender.com/removeproduct", {
       method: "POST",
       headers: {
         Accept: "application/json",

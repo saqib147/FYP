@@ -15,7 +15,7 @@ const LoginSignUp = () => {
     console.log("Login Function Executed", formData);
     try {
       const response = await fetch(
-        "http://localhost:5000/login?email=" + formData.email,
+        "https://fyp-login.onrender.com/login?email=" + formData.email,
         {
           method: "GET",
           headers: {
@@ -42,7 +42,7 @@ const LoginSignUp = () => {
     console.log("signup Function Executed", formData);
     try {
       const response = await fetch(
-        `http://localhost:5000/signup?name=${encodeURIComponent(
+        `https://fyp-login.onrender.com/signup?name=${encodeURIComponent(
           formData.name
         )}&email=${encodeURIComponent(
           formData.email
