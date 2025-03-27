@@ -31,8 +31,8 @@ const Users = mongoose.model("Users", {
 // Welcome endpoint
 app.get("/", (req, res) => {
   res.json({
-    groupMembers: ["Malaika Tabassum", "Farah Shamshair", "Laiba Naeem"],
-    projectTitle: "InStyle Cloth Store",
+    groupMembers: ["Saqib Arshad", "Fazeel Ahmad", "Anas bin Javed"],
+    projectTitle: "Gadget Gizmo Store",
   });
 });
 

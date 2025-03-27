@@ -25,8 +25,8 @@ mongoose
 
 app.get("/", (req, res) => {
   res.json({
-    groupMembers: ["Malaika Tabassum", "Farah Shamshair", "Laiba Naeem"],
-    projectTitle: "InStyle Cloth Store",
+    groupMembers: ["Saqib Arshad", "Anas Javed", "Fazeel Ahmed"],
+    projectTitle: "Gadget Gizmo Store",
   });
 });
 
