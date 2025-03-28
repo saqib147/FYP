@@ -1,48 +1,163 @@
-GET https://final-year-project-ecommerce-exri.onrender.com/
 
-//                          create
+# GET https://fyp-login.onrender.com/
+
+# //                          create
+# ###
+# GET https://fyp-login.onrender.com/signup?name=sajid&email=sajid@email.com&password=sajid
+
+# ###
+# GET https://fyp-login.onrender.com/signup?name=absar&email=absar@email.com&password=absar
+
+# ###
+# GET https://fyp-login.onrender.com/signup?name=bilal&email=bilal@email.com&password=bilal
+
+# //                          duplicate user
+# ###
+# GET https://fyp-login.onrender.com/signup?name=majid&email=majid@email.com&password=majid
+
+
+# //                           read all
+# ###
+# GET https://fyp-login.onrender.com/all
+# auth-token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjdiNzY5MjdlYjAwYzUwMDUyNDYwODlkIiwiZW1haWwiOiJtYWppZEBlbWFpbC5jb20iLCJuYW1lIjoibWFqaWQifSwiaWF0IjoxNzQzMTQ2MjQyfQ.ejNidrbOZIrk7beR6v6YMg2WXdqL0cJ6UiHSGCTxqA8"
+
+# //                          read
+# ###
+# GET https://fyp-login.onrender.com/login?email=majid@email.com
+
+
+# //                          update
+# ###
+# GET https://fyp-login.onrender.com/update?name=majid&email=majid@email.com
+# auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjdiNzY5MjdlYjAwYzUwMDUyNDYwODlkIiwiZW1haWwiOiJtYWppZEBlbWFpbC5jb20iLCJuYW1lIjoibWFqaWQifSwiaWF0IjoxNzQzMTQ1OTQ2fQ.IUK-bXZxgfYeg1nrNLO669BN31zPmgttnONNqZ2TwCc
+# ###
+
+# //                          delete
+# ###
+# GET https://fyp-login.onrender.com/delete?email=majid@email.com
+# auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NjAzZDVkNGUyYmJiOTg0MDhlYWI4YiIsImVtYWlsIjoibWFqaWRAZW1haWwuY29tIiwiaWF0IjoxNzM0MzYwNDMxfQ.GBJ7O-bU9nn5sQYgrgLHLihMg6LQyGfQA9lDROLT6mI
+# ###
+# GET https://fyp-login.onrender.com/all
+
+# ###
+# GET https://fyp-login.onrender.com/login?email=absar@email.com
+
+# ###
+# GET https://fyp-login.onrender.com/all
+
+# ###
+# GET https://fyp-login.onrender.com/delete?email=bilal@email.com
+
+# ###
+# GET https://fyp-login.onrender.com/all
+# auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NjAzZDVkNGUyYmJiOTg0MDhlYWI4YiIsImVtYWlsIjoibWFqaWRAZW1haWwuY29tIiwiaWF0IjoxNzM0MzYwNDMxfQ.GBJ7O-bU9nn5sQYgrgLHLihMg6LQyGfQA9lDROLT6mI
+# ###
+
+
+@baseUrlCart = https://fyp-cart.onrender.com
+@baseUrlProducts = https://fyp-index.onrender.com
+@baseUrlAuth = https://fyp-login.onrender.com
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjdlNjQ3ZWZlNDdhMTAwMDQ2MzlhNDFiIiwiZW1haWwiOiJzYXFpYkBlbWFpbC5jb20iLCJuYW1lIjoic2FxaWIifSwiaWF0IjoxNzQzMTUzNzQ0fQ.b52_dPDkkCA9QD7M6vXuNjArcq3ZlTCR1kkU_gh0Oks
+
+### Authentication Service ###
+
+# Signup (Create User)
+GET {{baseUrlAuth}}/signup?name=John Doe&email=johndoe@example.com&password=123456 HTTP/1.1
+
 ###
-GET https://final-year-project-ecommerce-exri.onrender.com/signup?name=majid&email=majid@email.com&password=majid
+
+# Login
+GET {{baseUrlAuth}}/login?email=saqib@email.com HTTP/1.1
 
 ###
-GET https://final-year-project-ecommerce-exri.onrender.com/signup?name=absar&email=absar@email.com&password=absar
+
+# Get All Users (Requires Auth)
+GET {{baseUrlAuth}}/all HTTP/1.1
+auth-token: {{authToken}}
 
 ###
-GET https://final-year-project-ecommerce-exri.onrender.com/signup?name=bilal&email=bilal@email.com&password=bilal
 
-//                          duplicate user
-###
-GET https://final-year-project-ecommerce-exri.onrender.com/signup?name=majid&email=majid@email.com&password=majid
-
-
-//                           read all
-###
-GET https://final-year-project-ecommerce-exri.onrender.com/all
-
-//                          read
-###
-GET https://final-year-project-ecommerce-exri.onrender.com/login?email=majid@email.com
-
-
-//                          update
-###
-GET https://final-year-project-ecommerce-exri.onrender.com/update?name=naeem&email=majid@email.com
-
-//                          delete
-###
-GET https://final-year-project-ecommerce-exri.onrender.com/delete?email=majid@email.com
+# Update User (Requires Auth)
+GET {{baseUrlAuth}}/update?email=saqib@email.com&name=John%20Updated HTTP/1.1
+auth-token: {{authToken}}
 
 ###
-GET https://final-year-project-ecommerce-exri.onrender.com/all
+
+# Delete User (Requires Auth)
+GET {{baseUrlAuth}}/delete?email=johndoe@example.com HTTP/1.1
+auth-token: {{authToken}}
 
 ###
-GET https://final-year-project-ecommerce-exri.onrender.com/delete?email=absar@email.com
+
+### Product Service ###
 
 ###
-GET https://final-year-project-ecommerce-exri.onrender.com/all
+
+# Add Product
+POST {{baseUrlProducts}}/addproduct HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Smartphone X",
+  "image": "https://res.cloudinary.com/.../image.jpg",
+  "category": "electronics",
+  "new_price": 599,
+  "old_price": 799
+}
 
 ###
-GET https://final-year-project-ecommerce-exri.onrender.com/delete?email=bilal@email.com
+
+# Remove Product
+POST {{baseUrlProducts}}/removeproduct HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": 1
+}
 
 ###
-GET https://final-year-project-ecommerce-exri.onrender.com/all
+
+# Get All Products
+GET {{baseUrlProducts}}/allproducts HTTP/1.1
+
+###
+
+# New Collections
+GET {{baseUrlProducts}}/newcollections HTTP/1.1
+
+###
+
+# Popular in Women
+GET {{baseUrlProducts}}/popularinwomen HTTP/1.1
+
+###
+
+### Cart Service ###
+
+# Add to Cart (Requires Auth)
+POST {{baseUrlCart}}/addtocart HTTP/1.1
+Content-Type: application/json
+auth-token: {{authToken}}
+
+{
+  "itemId": 1
+}
+
+###
+
+# Remove from Cart (Requires Auth)
+POST {{baseUrlCart}}/removefromcart HTTP/1.1
+Content-Type: application/json
+auth-token: {{authToken}}
+
+{
+  "itemId": 1
+}
+
+###
+
+# Get Cart (Requires Auth)
+POST {{baseUrlCart}}/getcart HTTP/1.1
+auth-token: {{authToken}}
+
+###
